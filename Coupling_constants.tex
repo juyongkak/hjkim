@@ -1,0 +1,1262 @@
+\documentclass[aps,prd,preprintnumbers,showpacs,showkeys,nofootinbib,
+superscriptaddress,fleqn,floatfix,tightenlines, 10pt]{revtex4-1}
+\usepackage{amsmath,amsfonts,amssymb,amscd,amsxtra,amsthm}
+\usepackage{graphicx}  % Include figure files
+\usepackage{epstopdf}
+\usepackage{dcolumn}  % Align table columns on decimal point
+\usepackage{bm}          % bold math
+\usepackage{slashed}
+	\usepackage[utf8]{inputenc}
+%raggedright - Each line of the caption will be moved to
+%the left margine
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage[normalem]{ulem} % \sout{old text} for strikeout
+\usepackage[dvipsnames]{xcolor} % For blue in-text comments and
+                                % additions
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{slashed}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{multirow}
+%\usepackage{subfig}
+\renewcommand\sout{\bgroup \color{red} \ULdepth=-.5ex \ULset}
+\newcommand{\com}[1]{{\sf\color[rgb]{0,0,1}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------
+\begin{document}
+\preprint{INHA-NTG-mm/yyyy}
+\title{$DD\sigma$ and $D^* D^* \sigma$ coupling constants}
+%-------------------------------------------------
+\author{Hee-Jin Kim}
+\affiliation{Department of Physics, Inha University, Incheon 402-751,
+Korea}
+\date{\today}
+\maketitle
+
+% ===================================================================================================================
+
+\section{Effective Lagrangian}
+ The effective Lagrangian we use here is as follows :
+\begin{align} \label{Lagrangian}
+	\mathcal{L}_{D D^* \pi} = g_{D D^* \pi} D^*_\mu \bm{\tau} \cdot \partial^\mu \bm{\pi} D
+	+ g_{D D^* \pi} D \bm{\tau} \cdot \partial^\mu \bm{\pi} D^*_\mu
+\end{align}
+\begin{align} \label{Lagrangian_D*}
+	\mathcal{L}_{D^* D^* \pi} = i g_{D^* D^* \pi} \varepsilon^{\alpha\beta\mu\nu} D^*_\alpha \bm{\tau} \cdot \partial_\mu \bm{\pi}
+	\partial _\nu D^*_\beta,
+\end{align}
+where $\bm{\tau}$ is pauli matrices for isospin. One can proof the hermitivity of $\mathcal{L}_{D^* D^* \pi}$ as
+\begin{align}\label{hermitivity_D*}
+	\left[i \varepsilon^{\alpha \beta \mu \nu} D_{\alpha}^\ast \bm{\tau} \cdot \partial_\mu \bm{\pi} \partial_\nu D_{\beta}^\ast \right]^\dagger
+	= -i \varepsilon^{\alpha \beta \mu \nu} \partial_\nu D_{\beta}^\ast \bm{\tau} \cdot \partial_\mu \bm{\pi} D_{\alpha}^\ast
+	= i \varepsilon^{\alpha \beta \mu \nu} D_{\alpha}^\ast \bm{\tau} \cdot \partial_\mu \bm{\pi} \partial_\nu D_{\beta}^\ast.
+\end{align}
+
+\section{The $\pi D \rightarrow \pi D$ amplitudes}
+% ===================================================================================================================
+\subsection{Kinematics}
+Let $p_1$ and $k_1$ be four-momenta for the initial $D$ meson and $\pi$ and $p_2$ and $q_2$ be those of final particles,
+respectively. We describe the kinematics in the center of mass frame for the calculation.
+\begin{align} \label{ddpipi_momenta}
+	  & p_1 = (E, \bm{p}), \quad k_1 = (\omega, -\bm{p}) \cr
+	  & p_2 = (E, \bm{k}), \quad k_2 = (\omega, -\bm{k})
+\end{align}
+We define the kinematic variables as below.
+\begin{align}
+	  s &= (p_1 + k_1)^2 = m_D^2 + m_\pi^2 + 2 p_1 \cdot k_1 = (E + \omega)^2	\cr
+	  t &= (p_1 - p_2)^2 = 2 m_D^2 - 2 p_1 \cdot p_2  = -2|\bm{p}|^2 (1-\cos{\theta})	\cr
+	  u &= (p_1 - k_2)^2 = 2m_D^2 + 2m_\pi^2 - s - t = m_D^2 + m_\pi^2 - 2p_1 \cdot k_2
+\end{align}
+and
+\begin{align}
+	p_1 \cdot k_1 &= p_2 \cdot k_2 = (s - m_D^2 - m_\pi^2)/2 \cr
+	p_1 \cdot p_2 &= k_1 \cdot k_2 = m_D^2 - t/2 \cr
+	p_1 \cdot k_2 &= p_2 \cdot k_1 = -(u - m_D^2 - m_\pi^2)/2.
+\end{align}
+
+\subsubsection{s-channel Feynman diagram}
+\begin{figure}[H] \label{dpidpi_s_diagram}
+	\centering
+	\includegraphics[scale=0.5]{coup_born_s-crop.pdf}
+	\caption{$s$-channel Feynman diagram}
+	\label{fig1}
+\end{figure}
+%=================================
+% the vertex feynman rule should be derived here!
+%=================================
+The $s$-channel Feynman diagram is depicted as Fig.(\ref{dpidpi_s_diagram}) and
+corresponding Feynman rules are derived as Fig.(ref). We can thus compute the Feynman amplitudes :
+\begin{align}
+	i \mathcal{M}_{ij}^s = (g_{DD^* \pi} k_1^\mu) \tau_i \times
+	\frac{-i \left(g_{\mu\nu} - \frac{q_\mu q_\nu}{m_{D^*}^2}\right)}{q^2-m_{D^*}^2} \times (-g_{DD^* \pi} k_2^\nu) \tau_j
+	= i g_{DD^* \pi}^2 \frac{k_1 \cdot k_2 - \frac{(k_1 \cdot q)(k_2 \cdot q)}{m_{D^*}^2}}{s-m_{D^*}^2} \tau_i \tau_j .
+\end{align}
+From Eq.(\ref{ddpipi_momenta}) we have
+\begin{align}
+	k_1 \cdot k_2 = m_\pi^2 + |\bm{p}|^2 (1-\cos{\theta}) = m_\pi^2 - \frac{t}{2}
+\end{align}
+and
+\begin{align}
+	k_1 \cdot q &= k_1 \cdot (k_1 + p_1) = k_1^2 + p_1 \cdot k_1 = m_\pi^2 + (s - m_D^2 - m_\pi^2)/2 = (s - m_D^2 + m_\pi^2)/2 \cr
+	k_2 \cdot q &= k_2 \cdot (k_2 + p_2) = k_2^2 + p_2 \cdot k_2 = (s - m_D^2 + m_\pi^2)/2
+\end{align}
+So that, the $s$-channel amplitude is
+\begin{align}\label{ddpipi_s}
+	i \mathcal{M}_{\alpha\beta}^s = i g_{DD^* \pi}^2
+	\frac{m_\pi^2 - t/2 - (s - m_D^2 + m_\pi^2)^2/4 m_{D^*}^2}{s - M_{D^*}^2} \tau_i \tau_j.
+\end{align}
+
+% ===================================================================================================================
+\subsubsection{u-channel diagram}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{coup_born_u-crop.pdf}
+	\caption{$u$-channel Feynman diagram}
+	\label{fig2}
+\end{figure}
+As we did for the $s$-channel, the $u$-channel amplitude may be obtaind as
+\begin{align}
+	i\mathcal{M}_{ij}^u &= (-g_{DD^* \pi} k_2^\mu) \tau_j \times
+	\frac{-i\left(g_{\mu\nu} - \frac{q_\mu q_\nu}{m_{D^*}^2}\right)}{q^2-m_{D^*}^2} \times
+	g_{DD^* \pi} k_1^\nu \tau_i = i g_{DD^* \pi}^2 \frac{k_1 \cdot k_2 -
+	\frac{(k_1 \cdot q)(k_2 \cdot q)}{m_{D^*}^2}}{u-m_{D^*}^2} \tau_j \tau_i
+\end{align}
+Since the four-momenta are conserved at every vertices, we have
+\begin{align}
+	k_1 \cdot q &= k_1 \cdot (p_2 - k_1) = p_2 \cdot k_1 - m_\pi^2 = - (u - m_D^2 - m_\pi^2)/2 - m_\pi^2 = - (u - m_D^2 + m_\pi^2)/2 \cr
+	k_2 \cdot q &= k_2 \cdot (p_1 - k_2) = p_1 \cdot k_2 - m_\pi^2 = - (u - m_D^2 + m_\pi^2)/2.
+\end{align}
+So that we may write the $u$-channel Feynman amplitude :
+\begin{align}\label{dpidpi_u}
+	i g_{DD^* \pi}^2 \frac{m_\pi^2 - t/2 - (u - m_D^2 - m_\pi^2)^2/4m_{D^*}^2}{u-m_{D^*}^2} \tau_j \tau_i.
+\end{align}
+Thus the amplitudes for $\pi D \rightarrow \pi D$ process are
+\begin{align}
+	i \mathcal{M}_{\alpha\beta}^s &= i g_{DD^* \pi}^2
+	\frac{m_\pi^2 - t/2 - (s - m_D^2 + m_\pi^2)^2/4 m_{D^*}^2}{s - M_{D^*}^2} \tau_i \tau_j \cr
+	i\mathcal{M}^u_{\alpha\beta} &= i g_{DD^* \pi}^2
+	\frac{m_\pi^2 - t/2 - (u - m_D^2 - m_\pi^2)^2/4m_{D^*}^2}{u-m_{D^*}^2} \tau_j \tau_i.
+\end{align}
+
+\section{The $D \bar{D} \rightarrow \pi\pi$ amplitude}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{coup_born_tu-crop.pdf}
+	\caption{$D \bar{D} \rightarrow \pi\pi$ Born diagrams}
+	\label{fig3}
+\end{figure}
+% ===================================================================================================================
+\subsection{Kinematics}
+Let the momenta of $D$ and $\bar{D}$ to be $p_1$ and $\bar{p}_2$ and the momenta of off-shell pions
+to be $\bar{k}_1$ and $k_2$, respectively.
+\begin{align}
+	  p_1 &= (E_p, \bm{p}), \quad \bar{p}_2 = (E_p, -\bm{p}) \cr
+	  \bar{k}_1 &= (\omega_1, \bm{k}), \quad k_2 = (\omega_2, -\bm{k})
+\end{align}
+We define the Mandelstam variables again. Note that basically the $s$ used to be square of the center
+of mass energy, however we used the $s$ as the momentum transfer here for our purpose.
+\begin{align}\label{mandelstam_ddpipi}
+	s &= (p_1 - \bar{k}_1)^2 = p_1^2 + \bar{k}_1^2 - 2 p_1 \cdot \bar{k}_1 = m_D^2 + \omega_1^2 - |\mathbf{k}|^2 - 2 p_1 \cdot k_1 \cr
+	t &= (p_1 + \bar{p}_2)^2 = p_1^2 + \bar{p}_2^2 + 2 p_1 \cdot \bar{p}_2 = 2 m_D^2 + 2p_1 \cdot \bar{p}_2 = 4E_p^2\cr
+	&= (\bar{k}_1 + k_2)^2 = \bar{k}_1^2 + k_2^2 + 2 \bar{k}_1 \cdot k_2
+	= \omega_1^2 + \omega_2^2 - 2 |\mathbf{k}|^2 + 2 \bar{k}_1 \cdot k_2  = (\omega_1 + \omega_2)^2 \equiv 4 \bar{\omega}^2\cr
+	% t = 4E_p^2 = 4\bar{\omega}^2 is not correct. The four-momenta are not conserved!!
+	u &= (p_1 - k_2)^2 = p_1^2 + k_2^2 - 2 p_1 \cdot k_2 = m_D^2 + \omega_2^2 - |\mathbf{k}|^2 - 2 p_1 \cdot k_2
+\end{align}
+The off-shell pion momenta :
+\begin{align}
+	\bar{k}_1^2 = k_2^2 = \frac{t}{4} - |\mathbf{k}|^2
+\end{align}
+%=====================================================
+It is convenient to write down the momentum constractions in terms of the Mandelstam variables
+for our calculations.
+% Off shell pion case
+%\begin{align}
+%	p_1 \cdot \bar{p}_2 &= m_D^2 - t/2	\\
+%	\bar{k}_1 \cdot k_2 &= \omega_k^2 + |\bm{k}|^2	(???)\\
+%	p_1 \cdot \bar{k}_1 &=
+%\end{align}
+%
+% On shell pion case
+\begin{align}
+	p_1 \cdot \bar{p}_2 &= m_D^2 - t/2 \cr
+	\bar{k}_1 \cdot k_2 &= \frac{t}{4} + |\mathbf{k}|^2 \cr
+	p_1 \cdot \bar{k}_1 &= (m_D^2 + \omega^2 - |\mathbf{k}|^2 - s)/2 \cr
+	p_1 \cdot k_2 &= (m_D^2 + \omega^2 - |\mathbf{k}|^2 - u)/2
+\end{align}
+The $s$-channel amplitude :
+\begin{align}
+	i\mathcal{M}_{ij}^s = g_{DD^* \pi} \bar{k}_1^\mu \tau_i \times \frac{-i\left(g_{\mu\nu} -
+	\frac{q_\mu q_\nu}{m_{D^*}^2} \right)}{q^2 - m_{D^*}^2} \times g_{DD^* \pi} k_2^\nu \tau_j
+	= -i g_{DD^* \pi}^2 \frac{\bar{k}_1 \cdot k_2 - \frac{(\bar{k}_1 \cdot q)(k_2 \cdot q)}
+	{m_{D^*}^2}}{s - m_{D^*}^2} \tau_i \tau_j
+\end{align}
+%
+We will drop the symbol of absolute value for breivity.\\\\
+1) $g_{\mu\nu}$ term
+\begin{align}
+	\bar{k}_1 \cdot k_2 = \frac{t}{4} + \mathbf{k}^2
+\end{align}
+%
+2) $q_\mu q_\nu$ term
+% Off shell pion case
+%\begin{align}
+%	\bar{k}_1 \cdot q &= \bar{k}_1 \cdot (p_1 - \bar{k}_1) = p_1 \cdot \bar{k}_1 - \bar{k}_1^2
+%	= (m_D^2 + \omega_1^2 - |\mathbf{k}|^2 - s)/2 - \omega_1^2 + |\mathbf{k}|^2
+%	= (m_D^2 - \omega_1^2 + |\mathbf{k}|^2 - s)/2 \cr
+%	k_2 \cdot q &= k_2 \cdot (\bar{p}_2 + k_2) = \bar{p}_2 \cdot k_2 + k_2^2
+%	= (m_D^2 - \omega_2^2 + |\mathbf{k}|^2 - s)/2
+%\end{align}
+% On shell pion case
+\begin{align}
+	\bar{k}_1 \cdot q &=  \bar{k}_1 \cdot (p_1 - \bar{k}_1) = p_1 \cdot \bar{k}_1 - \bar{k}_1^2 \cr
+	&= (m_D^2 + \omega^2 - \mathbf{k}^2 - s)/2 - (\omega^2 - \mathbf{k}^2)
+	= (m_D^2 - \omega^2 + \mathbf{k}^2 - s)/2 = (4m_D^2 - t - 4s + 4\mathbf{k}^2)/8 \cr
+	k_2 \cdot q &= k_2 \cdot (k_2 - \bar{p}_2) = k_2^2 - \bar{p}_2 \cdot k_2 \cr
+	&= (\omega^2 - \mathbf{k}^2 - (m_D^2 + \omega^2 - \mathbf{k}^2 - s)/2
+	= -(m_D^2 - \omega^2 + \mathbf{k}^2 - s)/2 = -(4m_D^2 - t - 4s + 4\mathbf{k}^2)/8
+\end{align}
+with $q = \bar{k}_1 - p_1 = \bar{p}_2 - k_2$. Therefore
+% Off shell pion case
+%\begin{align}
+%	i\mathcal{M}^s_{ij} = i g_{DD^* \pi}^2 \frac{\bar{k}_1 \cdot k_2 -
+%	(m_D^2 - \omega_1^2 + |\mathbf{k}|^2 - s)(m_D^2 - \omega_2^2 + |\mathbf{k}|^2 - s)/4M_{D^*}^2}{s - M_{D^*}^2} \tau_i \tau_j
+%\end{align} with $q = \bar{k}_1 - p_1 = \bar{p}_2 - k_2$.
+\begin{align}
+	i\mathcal{M}^s_{ij} = -i g_{DD^* \pi}^2 \frac{t/4 + \mathbf{k}^2 +
+	(4m_D^2 - t - 4s + 4\mathbf{k}^2)^2/64M_{D^*}^2}{s - M_{D^*}^2} \tau_i \tau_j
+\end{align}
+In the similar way, we can also calculate the $u$-channel diagram.
+\begin{align}
+	i\mathcal{M}_{ij}^u &= g_{DD^* \pi} k_2^\mu \tau_j \times \frac{-i \left(g_{\mu\nu}
+	 - \frac{q_\mu q_\nu}{m_{D^*}^2}\right)}{q^2 - m_{D^*}^2} \times g_{DD^* \pi} \bar{k}_1^\nu \tau_i \cr
+	 &= -i g_{DD^* \pi}^2 \frac{\bar{k}_1 \cdot k_2 - \frac{(\bar{k}_1 \cdot q)(k_2 \cdot q)}{m_{D^*}^2}}{u-m_{D^*}^2} \tau_j \tau_i
+\end{align}
+The only difference is that $q$ is changed to $p_1 - k_2 = \bar{k}_1 - \bar{p}_2$.
+\begin{align}
+	\bar{k}_1 \cdot q &= \bar{k}_1 \cdot (\bar{k}_1 - \bar{p}_2) = \bar{k}_1^2 - \bar{p}_2 \cdot \bar{k}_1 \cr
+	&= \omega^2 - \mathbf{k}^2 - (m_D^2 + \omega^2 - \mathbf{k}^2 - u)/2
+	= - (m_D^2 - \omega^2 + \mathbf{k}^2 - u)/2 = -(4m_D^2 - t - 4u - 4\mathbf{k}^2)/8 \cr
+	k_2 \cdot q &= k_2 \cdot (p_1 - k_2) = p_1 \cdot k_2 - k_2^2 \cr
+	&= (m_D^2 - \omega^2 - \mathbf{k}^2 - u)/2 - (\omega^2 - \mathbf{k}^2)
+	= (m_D^2 - \omega^2 - \mathbf{k}^2 -u)/2 = (4m_D^2 - t - 4u - 4\mathbf{k}^2)/8
+\end{align}
+The $u$-channel amplitude :
+\begin{align}
+	i\mathcal{M}_{ij}^u = -ig_{DD^* \pi}^2 \frac{t/4 - \mathbf{k}^2 +
+	(4m_D^2 - t - u - 4\mathbf{k}^2)^2/64m_{D^*}^2}{u-m_{D^*}^2}\tau_j \tau_i
+\end{align}
+%
+So that
+\begin{align}
+	i\mathcal{M}^s_{ij} &= -i g_{DD^* \pi}^2 \frac{t/4 + \mathbf{k}^2 +
+	(4m_D^2 - t - 4s + 4\mathbf{k}^2)^2/64M_{D^*}^2}{s - M_{D^*}^2} \tau_i \tau_j\\
+	i\mathcal{M}_{ij}^u &= -ig_{DD^* \pi}^2 \frac{t/4 + \mathbf{k}^2 +
+	(4m_D^2 - t - 4u - 4\mathbf{k}^2)^2/64m_{D^*}^2}{u-m_{D^*}^2}\tau_j \tau_i .
+\end{align}
+We thus obtain the total amplitude.
+\begin{align}
+	\mathcal{M}_{ij}^{\mathrm{tot}} = -g_{DD^* \pi}^2
+	&\left\{ \frac{t/4 + \mathbf{k}^2 + (4m_D^2 - t - 4s + 4\mathbf{k}^2)^2/64M_{D^*}^2}{s - M_{D^*}^2} \tau_i \tau_j \right. \cr
+	&\quad \left. + \frac{t/4 + \mathbf{k}^2 + (4m_D^2 - t - 4u - 4\mathbf{k}^2)^2/64m_{D^*}^2}{u-m_{D^*}^2} \tau_j \tau_i \right\}
+\end{align}
+The amplitudes can be decomposed into two parts by the identity
+\begin{align}
+	\tau_i \tau_j = \frac{1}{2} \left( \{\tau_i, \tau_j\} + [\tau_i, \tau_j] \right) = \delta_{ij} + \frac{1}{2}[\tau_i, \tau_j].
+\end{align}
+Hence, we may write
+\begin{align}
+	\mathcal{M}_{ij}^{\mathrm{tot}} = \mathcal{M}^{(+)} \delta_{ij} + \mathcal{M}^{(-)} \frac{1}{2} [\tau_i, \tau_j],
+\end{align}
+where
+\begin{align} \label{dpidpi_pmamp}
+	\mathcal{M}^{(+)} &\equiv - g_{DD^* \pi}^2 \left\{ \frac{t/4 + \mathbf{k}^2 +
+	(4m_D^2 - t - 4s + 4\mathbf{k}^2)^2/64M_{D^*}^2}{s - M_{D^*}^2}
+	+ \frac{t/4 + \mathbf{k}^2 + (4m_D^2 - t - 4u - 4\mathbf{k}^2)^2/64m_{D^*}^2}{u-m_{D^*}^2} \right\}\cr
+	\mathcal{M}^{(-)} &\equiv - g_{DD^* \pi}^2 \left\{ \frac{t/4 + \mathbf{k}^2 -
+	(4m_D^2 - t - 4s + 4\mathbf{k}^2)^2/64M_{D^*}^2}{s - M_{D^*}^2}
+	- \frac{t/4 + \mathbf{k}^2 + (4m_D^2 - t - 4u - 4\mathbf{k}^2)^2/64m_{D^*}^2}{u-m_{D^*}^2} \right\}.
+\end{align}
+%\begin{align}
+%	  & i\mathcal{M}^s_{\alpha\beta} = i \left( \frac{2g}{f_\pi} \right)^2 \frac{
+%	m_\pi^2 - (t/2) - (s - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{s - M_{D^*}^2} \tau_i \tau_j \\
+%	  & i\mathcal{M}^u_{\alpha\beta} = i \left(\frac{2g}{f_\pi} \right)^2 \frac{
+%	m_\pi^2 - (t/2) - (u - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{u - M_{D^*}^2} \tau_j \tau_i
+%\end{align}
+%The total amplitude :
+%\begin{align} \label{D-amplitude}
+%	i\mathcal{M}_{\alpha\beta} & = i \left( \frac{2g}{f_\pi} \right)^2 \left[
+%	\frac{
+%	m_\pi^2 - (t/2) - (s - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{s - M_{D^*}^2} \tau_i \tau_j
+%	\right. \cr
+%	& \qquad\qquad\qquad\qquad\qquad\qquad\qquad \left. +\ \frac{
+%	m_\pi^2 - (t/2) - (u - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{u - M_{D^*}^2} \tau_j \tau_i
+%	\right]  \cr
+%	& = i\mathcal{M}^{(+)}\delta_{\alpha\beta}
+%	+ i\mathcal{M}^{(-)}\frac{1}{2} [\tau_i,\tau_j],
+%\end{align}
+%where
+%\begin{align}
+%	\mathcal{M}^{(+)} & = \left( \frac{2g}{f_\pi} \right)^2 \left[
+%	\frac{
+%	m_\pi^2 - (t/2) - (s - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{s - M_{D^*}^2} + \frac{
+%	m_\pi^2 - (t/2) - (u - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{u - M_{D^*}^2}
+%	\right]  \\
+%	\mathcal{M}^{(-)} & = \left( \frac{2g}{f_\pi} \right)^2 \left[
+%	\frac{
+%	m_\pi^2 - (t/2) - (s - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{s - M_{D^*}^2} - \frac{
+%	m_\pi^2 - (t/2) - (u - M_D^2 + m_\pi^2)^2/4M_{D^*}^2
+%	}{u - M_{D^*}^2} \right]
+%\end{align}
+%and
+%\begin{align}
+%	  & \mathcal{M}_{3/2} = \mathcal{M}^{(+)} - \mathcal{M}^{(-)}  \\
+%	  & \mathcal{M}_{1/2} = \mathcal{M}^{(+)} + 2\mathcal{M}^{(-)}.
+%\end{align}
+%
+%$m_\pi =$ 135\,MeV, $M_D =$ 1865\,MeV and $M_{D^*} =$ 2007\,MeV.
+%\begin{align}
+%  \frac{1}{4M_D^2} \frac{(s - M_D^2 + m_\pi^2)^2}{s - M_{D^*}^2} &=
+%  \frac{1}{4M_D^2} \left[
+%    \frac{(s - M_D^2)^2}{s-M_{D^*}^2} + 2m_\pi^2 \frac{s-M_D^2}{s-M_{D^*}^2} + \frac{m_\pi^4}{s-M_{D^*}^2}
+%  \right]
+%\end{align}
+%
+% ===================================================================================================================
+% ===================================================================================================================
+
+\section{The $D^* \bar{D}^* \rightarrow \pi\pi$ amplitude}
+
+\subsection{$D$-exchange}
+In this section, we will calculate the $D^* \bar{D}^*$ scattering processes
+which exchage $D$- and $D^*$ mesons. First up, we want to start
+from the $D$-exchange diagram. These processes can be expressed diagramatically as
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{DstarDstar_t-crop.pdf}
+	\caption{$D^* \bar{D}^* \rightarrow \pi\pi$ Born diagrams ($D$-exchange)}
+	\label{fig4}
+\end{figure}
+The $s$- channel :
+\begin{align}
+	i\mathcal{M}_{ij}^{D,s} & = g_{DD^* \pi} k_1^\mu \epsilon_\mu^{(\lambda)}(p_1) \tau_i
+	\times \frac{i}{q^2 - m_D^2} \times g_{DD^* \pi} k_2^\nu \epsilon_\nu^{(\lambda')}(p_2) \tau_j \cr
+	& = i g_{DD^* \pi}^2 \epsilon_\mu^{(\lambda)} (p_1) \epsilon_\nu^{(\lambda')} (p_2)
+	\frac{k_1^\mu k_2^\nu}{s - M_D^2} \tau_i \tau_j
+\end{align}
+The $u$-channel :
+\begin{align}
+	i\mathcal{M}_{ij}^{D,u} & = g_{DD^* \pi} k_2^\mu \epsilon_\mu^{(\lambda)}(p_1) \tau_j
+	\times \frac{i}{q^2 - m_D^2} \times g_{DD^* \pi} k_1^\nu \epsilon_\nu^{(\lambda')}(p_2) \tau_i \cr
+	& = i g_{DD^* \pi}^2 \epsilon_\mu^{(\lambda)} (p_1) \epsilon_\nu^{(\lambda')} (p_2)
+	\frac{k_2^\mu k_1^\nu}{s - M_D^2} \tau_j \tau_i
+\end{align}
+The total $D$-exchange diagram :
+\begin{align}
+	i\mathcal{M}_{ij,\lambda \lambda'}^{D,\mathrm{tot}} = i g_{DD^* \pi}^2 \left\{
+	\mathcal{M}_{\lambda \lambda'}^{(+)}\delta_{ij} + \mathcal{M}_{\lambda \lambda'}^{(-)}
+	\frac{1}{2} [\tau_i, \tau_j] \right\},
+\end{align}
+where
+\begin{align}
+	 &\mathcal{M}^{(+)}_{\lambda \lambda'} = g_{D D^* \pi}^2
+	\epsilon_\mu^{(\lambda)} (p_1) \epsilon_\nu^{(\lambda')} (p_2) \left[
+	\frac{k_1^\mu k_2^\nu}{s - M_D^2} + \frac{k_2^\mu k_1^\nu}{u - M_D^2} \right] \\
+	 &\mathcal{M}^{(-)}_{\lambda \lambda'} = g_{D D^* \pi}^2
+	\epsilon_\mu^{(\lambda)} (p_1) \epsilon_\nu^{(\lambda')} (p_2) \left[
+	\frac{k_1^\mu k_2^\nu}{s - M_D^2} - \frac{k_2^\mu k_1^\nu}{u - M_D^2} \right]
+\end{align}
+
+% ===================================================================================================================
+
+\subsection{$D^*$-exchange}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{DstarDstar_Dstar-crop.pdf}
+	\caption{$D^* \bar{D}^* \rightarrow \pi\pi$ Born diagrams ($D^*$-exchange)}
+	\label{fig5}
+\end{figure}
+There is another possible diagrams that interchange $D^*$ meson.
+The corresponding Born diagrams are given in Fig.(\ref{fig5}).
+A correlation function is given as
+\begin{align}
+	\langle \pi(k_1) \pi(k_2) \left\{ i g_{D^*D^*\pi} \varepsilon^{\alpha \beta \mu \nu}
+	D_\alpha^* \bm{\tau} \cdot \partial_\mu \bm{\pi} \partial_\nu D_\beta^* \right\}
+	\left\{ i g_{D^*D^*\pi} \varepsilon^{\gamma \delta \mu' \nu'} D_\gamma^* \bm{\tau}
+	\cdot \partial_{\mu'} \bm{\pi} \partial_{\nu'} D_\delta^* \right\} D^* (p_1) D^* (p_2) \rangle,
+\end{align}
+where $\langle \cdots \rangle$ means the expectation value of the time ordered operator. The external particles, two $D^*$ and
+two pions, extracted by LSZ reduction. In order to calculate the amplitudes, we have to consider all possible contractions
+corresponding to the Feynman diagram. There are two derivatives for a pion and a $D^*$ field respectively.
+In the case of $t$-channel, the term $\partial_\mu \pi$ just gives a factor of $-ik_{1\mu}$.
+However $\partial_\beta D^*$ can be contracted with both of the external and intermediate field.
+\begin{align}
+	i\mathcal{M}_{ij}^{D^*,s} = i g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^* (p_1 + q)_\nu
+	(p_2 - q)_{\nu'} k_{1\mu} k_{2\mu'} \frac{g_{\alpha \gamma} - \frac{q_\alpha q_\gamma}{m_{D^*}^2}}
+	{s - m_{D^*}^2} \tau_i \tau_j
+\end{align}
+By using the four-momentum conservation, we may write
+\begin{align}
+	i\mathcal{M}_{ij}^{D^*,s} = i g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^* (2p_1 - k_1)_\nu
+	(2p_2 - k_2)_{\nu'} k_{1\mu} k_{2\mu'} \frac{g_{\alpha \gamma} - \frac{q_\alpha q_\gamma}{m_{D^*}^2}}
+	{s - m_{D^*}^2} \tau_i \tau_j .
+\end{align}
+It is easy to show that two momenta contracted with Levi-civita tensor is zero as
+\begin{align}
+	\varepsilon^{\alpha \beta \mu \nu} k_\mu k_\nu C_{\alpha \beta}
+	= - \epsilon^{\alpha \beta \nu \mu} k_\mu k_\nu C_{\alpha \beta}
+	= - \epsilon^{\alpha \beta \nu \mu} k_\nu k_\nu C_{\alpha \beta}
+	= - \varepsilon^{\alpha \beta \mu \nu} k_\mu k_\nu C_{\alpha \beta} = 0,
+\end{align}
+where the $C_{\alpha \beta}$ is arbitrary rank 2 tensor. We thus have
+\begin{align}
+	i\mathcal{M}_{ij}^{D^*,s} = 4i g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^* p_{1\nu}
+	p_{2\nu'} k_{1\mu} k_{2\mu'} \frac{g_{\alpha \gamma} - \frac{q_\alpha q_\gamma}{m_{D^*}^2}}
+	{s - m_{D^*}^2} \tau_i \tau_j .
+\end{align}
+In the same way, we calculate the $u$-channel amplitude.
+\begin{align}
+	i\mathcal{M}_{ij}^{D^*,u} = 4i g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^* p_{1\nu}
+	p_{2\nu'} k_{2\mu} k_{1\mu'} \frac{g_{\alpha \gamma} - \frac{q_\alpha q_\gamma}{m_{D^*}^2}}
+	{u - m_{D^*}^2} \tau_j \tau_i
+\end{align}
+From the symmetry of momenta $p_i$ or $k_i$, the $q_\alpha q_\gamma$ term vanishes, so that
+the $D^*-$exchange Feynman amplitudes can be written as
+\begin{align}
+	\mathcal{M}_{ij}^{D^*,s} = 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^*
+	g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \frac{k_{1\mu} k_{2\mu'}}
+	{s - m_{D^*}^2} \tau_i \tau_j
+\end{align}
+\begin{align}
+	\mathcal{M}_{ij}^{D^*,u} = 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^*
+	g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \frac{k_{2\mu} k_{1\mu'}}
+	{u - m_{D^*}^2} \tau_j \tau_i
+\end{align}
+The total $D^*$-exchange diagram :
+\begin{align}
+	\mathcal{M}_{ij}^{D^*} = \mathcal{M}_{D^*}^{(+)} \delta_{ij} + \mathcal{M}_{D^*}^{(-)}
+	\frac{1}{2} [\tau_i, \tau_j],
+\end{align}
+where
+\begin{align}
+	\mathcal{M}_{D^*}^{(+)} = 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^*
+	g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \left[
+	\frac{k_{1\mu} k_{2\mu'}}{s - m_{D^*}^2} + \frac{k_{2\mu} k_{1\mu'}}{u - m_{D^*}^2}\right]
+\end{align}
+\begin{align}
+	\mathcal{M}_{D^*}^{(-)} = 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} \epsilon_\beta^* \epsilon_\delta^*
+	g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \left[
+	\frac{k_{1\mu} k_{2\mu'}}{s - m_{D^*}^2} - \frac{k_{2\mu} k_{1\mu'}}{u - m_{D^*}^2}\right]
+\end{align}
+If we extract polarization vector from amplitudes, it can be expressed as
+\begin{align}
+	\mathcal{M}_{D^*}^{(+)\beta \delta} = 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \left[
+	\frac{k_{1\mu} k_{2\mu'}}{s - m_{D^*}^2} + \frac{k_{2\mu} k_{1\mu'}}{u - m_{D^*}^2}\right]
+\end{align}
+\begin{align}
+	\mathcal{M}_{D^*}^{(-)\beta \delta} = 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \left[
+	\frac{k_{1\mu} k_{2\mu'}}{s - m_{D^*}^2} - \frac{k_{2\mu} k_{1\mu'}}{u - m_{D^*}^2}\right].
+\end{align}
+To summarize, we may write
+\begin{align}
+	\mathcal{M}_{(+)}^{\beta \delta} = g_{D D^* \pi}^2 \left[
+	\frac{k_1^\beta k_2^\delta}{s - M_D^2} + \frac{k_2^\beta k_1^\delta}{u - M_D^2} \right]
+	+ 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \left[
+	\frac{k_{1\mu} k_{2\mu'}}{s - m_{D^*}^2} + \frac{k_{2\mu} k_{1\mu'}}{u - m_{D^*}^2}\right]
+\end{align}
+\begin{align}
+	\mathcal{M}_{(-)}^{\beta \delta} = g_{D D^* \pi}^2 \left[
+	\frac{k_1^\beta k_2^\delta}{s - M_D^2} - \frac{k_2^\beta k_1^\delta}{u - M_D^2} \right]
+	+ 4g_{D^*D^*\pi}^2 \varepsilon^{\alpha \beta \mu \nu}
+	\varepsilon^{\gamma \delta \mu' \nu'} g_{\alpha \gamma} p_{1\nu} p_{2\nu'} \left[
+	\frac{k_{1\mu} k_{2\mu'}}{s - m_{D^*}^2} - \frac{k_{2\mu} k_{1\mu'}}{u - m_{D^*}^2}\right]
+\end{align}
+% ===================================================================================================================
+% ===================================================================================================================
+\section{The $\pi D^* \rightarrow \pi D^*$ amplitude}
+In order to check the crossing symmetry,the same procedure, we did at
+previous sections, may be done in these scattering processes. We will
+calculate $\pi D^* \rightarrow \pi D^*$ amplitudes in this section and
+represent amplitudes in terms of $s,t,$ and $u$, so that they are related
+to $D^* \bar{D}^* \rightarrow \pi\pi$. The corresponding Feynman diagrams :
+
+%	piD^* diagram will be inserted
+
+%	Vertex Feynman rules will be inserted	(appendix?)
+
+
+
+\newpage
+\section{rescattering equation}
+The Blankenbecler-Sugar equation can decribe $\pi\pi$ interaction.
+\begin{align} \label{BbS1}
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^
+{\lambda_1 \lambda_2} (p,p';s) =
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^
+{\mathrm{Born},\lambda_1 \lambda_2} (p,p';s)
++ \int{d^3q\, \frac{1}{(2\pi)^3} \frac{1}{2\omega_q}
+\frac{\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^
+{\mathrm{Born},\lambda_1 \lambda_2}(p,q;s)
+\mathcal{T}_{\pi\pi \rightarrow \pi\pi}(q,p';s)}
+{s - 4\omega_q^2 + i \varepsilon}}
+\end{align}
+By means of partial expansion we may reduce this equation.
+\begin{align}
+\langle \phi_q \theta_q 0 0 |
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{\lambda_1 \lambda_2}
+| 0 0 \lambda_1 \lambda_2 \rangle &= \sum_{J} \sum_{M,M'}
+\langle \phi_q \theta_q 0 0 | J M' 0 0 \rangle
+\langle J M' 0 0 | \mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{J, \lambda_1 \lambda_2}
+| J M \lambda_1 \lambda_2 \rangle \langle J M \lambda_1 \lambda_2 |
+0 0 \lambda_1 \lambda_2 \rangle \delta_{MM'} \cr
+&=\sum_J \sum_{M} \frac{2J+1}{4\pi} D^{J*}_{M0} (\phi_q, \theta_q, 0)
+D^{J}_{M \lambda} (0,0,0)
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{J, \lambda_1 \lambda_2}
+\end{align}
+
+\begin{align}
+\langle \phi \theta 0 0 | \mathcal{T}_{\pi\pi \rightarrow \pi\pi}
+| \phi_q \theta_q 0 0 \rangle &=
+\sum_{J} \sum_{M} \frac{2J+1}{4\pi}
+D^{J*}_{M 0} (\phi, \theta, 0) D^J_{M 0} (\phi_q, \theta_q, 0)
+\mathcal{T}_{\pi\pi \rightarrow \pi\pi}^J
+\end{align}
+
+\begin{align} \label{BbS2}
+\sum_J {\frac{2J+1}{4\pi}\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi} ^
+{J, \lambda_1 \lambda_2} D^{J*}_{\lambda 0} (\phi, \theta, 0)}
+= &\sum_J {\frac{2J+1}{4\pi} \mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}
+^{\mathrm{Born}, J ; \lambda_1 \lambda_2}} D^{J*}_{\lambda 0} (\phi, \theta, 0) \cr
+&+ \sum_{J,J'} \sum_{M,M'} {\int{d^3q\, \frac{(2J+1)(2J'+1)}{(4\pi)^2}
+\frac{1}{(2\pi)^3 2\omega_q (s - 4\omega_q^2 + i \varepsilon)}}}
+\cr &\times
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{\mathrm{Born},J, \lambda_1 \lambda_2}
+\mathcal{T}_{\pi\pi \rightarrow \pi\pi}^{J'}
+ D^{J}_{M \lambda} (0,0,0) D^{J*}_{M' 0} (\phi, \theta, 0) \cr
+&\times D^J_{M 0} (\phi_q, \theta_q, 0) D^{J*}_{M'0} (\phi_q, \theta_q, 0) \cr
+= &\sum_J \frac{2J+1}{4\pi} \mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}
+^{\mathrm{Born},J;\lambda_1 \lambda_2} D^{J*}_{\lambda 0} (\phi, \theta, 0) \cr
+& + \sum_J \int{dq\, q^2 \frac{2J+1}{4\pi}
+\frac{1}{(2\pi)^3 2\omega_q (s - 4\omega_q^2 + i \varepsilon)}} \cr
+& \times \mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{\mathrm{Born},J, \lambda_1 \lambda_2}
+\mathcal{T}_{\pi\pi \rightarrow \pi\pi}^{J} D^{J*}_{\lambda 0} (\phi, \theta, 0),
+\end{align}
+so that for the scalar channel we obtain
+\begin{align}
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{J=0, \lambda_1 \lambda_2}
+= \mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^
+{\mathrm{Born},J=0; \lambda_1 \lambda_2} +
+\int{dq\, q^2 \frac{1}{(2\pi)^3 2\omega_q (s - 4\omega_q^2 + i \varepsilon)}}
+\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{\mathrm{Born},J=0, \lambda_1 \lambda_2}
+\mathcal{T}_{\pi\pi \rightarrow \pi\pi}^{J=0}
+\end{align}
+
+\section{Form factor dependence}
+We have calculated the Born amplitudes so far. Consequently, because of the several momenta in their numerator,
+they are badly divergent. Thus we shall introduce the form factors. Several kinds of form factors can be considered.
+We first try a monopole type form factor.
+\begin{align}
+	F = \frac{\Lambda^2 - m_{D^*}^2}{\Lambda^2 + |\mathbf{k}|^2}
+\end{align}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{forms.pdf}
+	\caption{The blue, yellow and green lines correspond to monopole, $s$-channel and exponential form factor respectively.
+	$\Lambda=2400$ and $\cos{\theta}=0$ for $s$-channel form factor.}
+	\label{form}
+\end{figure}
+As depicted in Fig.(\ref{Born monoff}), this form factor is not sufficient to supress the high energy divergences.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Spectral_Born_mono_2000_171031.pdf}
+	\caption{The $D \bar{D} \rightarrow \pi\pi$ Born amplitude. A monopole form facor is used from $\Lambda=2000$ to $2400$}
+	\label{Born monoff}
+\end{figure}
+We may also take account of the $s$-channel and exponential form factors.
+\begin{align}
+	F_{\mathrm{s}} = \frac{\Lambda^4}{\Lambda^4 + \left( s - m_{D^*}^2 \right)}
+\end{align}
+\begin{align}
+	F_{\mathrm{exp}} = \exp{-\frac{|\mathbf{k}|^2}{\Lambda^2}}
+\end{align}
+However no one was able to supress them.
+\begin{figure}[!t]
+	\centering
+	\includegraphics[scale=0.5]{Spectral_Born_2000_171030.pdf}
+	\caption{The $D \bar{D} \rightarrow \pi\pi$ Born amplitude with the $s$-channel form facor from $\Lambda=2000$ to $2400$}
+	\label{schff}
+\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{Spectral_Born_exp_2000_171031.pdf}
+%	\caption{The $D \bar{D} \rightarrow \pi\pi$ Born amplitude with the exponential form facor from $\Lambda=%2000$ to $2400$}
+%	\label{expff}
+%
+%	F = \exp{-\frac{q^2 + m_{D^*}^2}{\Lambda^2}}.
+%\end{align}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{DDstrBorn00_exp_1000.pdf}
+	\caption{The $D^* \bar{D^*} \rightarrow \pi\pi$ Born amplitude with the exponential form facor from $\Lambda=1000$ to $1400$}
+	\label{expff2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{DDstrBorn11_exp_1000.pdf}
+	\caption{The $D^* \bar{D^*} \rightarrow \pi\pi$ Born amplitude with the exponential form facor from $\Lambda=1000$ to $1400$}
+	\label{expff3}
+\end{figure}
+
+
+\section{spectral function}
+\subsection{Two-body unitarity}
+The fact $S$-matrix is unitary implies that $SS^\dagger$ should be
+the identity operator, $I$. The $S$-matrix can be decomposed as
+\begin{align}
+	S = 1 + iT = 1 + i (2\pi)^4 \delta^{(4)} (\sum{P}) \mathcal{M},
+\end{align}
+where $T$ is transfer matrix and $\sum{P}$ is the total external
+four-momentum. From the unitarity, we may write
+\begin{align} \label{unitarity}
+	S_{fn}S_{in}^\dagger &= \left\{\delta_{fn} + i(2\pi)^4 \delta^{(4)}(P_f - P_n) \mathcal{M}_{fn} \right\}
+	\left\{\delta_{ni} - i(2\pi)^4 \delta^{(4)}(P_n - P_i) \mathcal{M}_{in}^\dagger \right\} \cr
+	&= \delta_{fi} + i(2\pi)^4 \delta^{(4)} (P_f - P_i) \mathcal{M}_{fi} - i(2\pi)^4 \delta^{(4)} (P_f - P_i) \mathcal{M}_{fi}^\dagger \cr
+	&\ \ \ +\sum_n {(2\pi)^8 \delta^{(4)}(P_f - P_n) \delta^{(4)}(P_n - P_i) \mathcal{M}_{fn} \mathcal{M}_{ni}^\dagger} \cr
+	&= \delta_{fi}.
+\end{align}
+We want to describe $D^* \bar{D}^*$ final state, Eq.(\ref{unitarity}) implies that
+\begin{align} \label{unitarity3}
+	-i\left(\mathcal{M}_{D^* \bar{D}^*} - \mathcal{M}_{D^* \bar{D}^*}^\dagger \right) =
+	\sum_n {(2\pi)^4 \delta^{(4)}(P_f - P_n) |\mathcal{M}_{{D^* \bar{D}^*} \rightarrow n}|^2}
+\end{align}
+If we take a intermediate process as $2\pi$ exchange, Eq.(\ref{unitarity3}) takes the form of
+\begin{align}
+	2\, \mathrm{Im} \mathcal{M}_{D^* \bar{D}^*} = \frac{1}{2}
+	\int{(2\pi)^4 \delta^{(4)}(p_1 + p_2 - q_1 - q_2) |\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2} d \Pi_2,
+\end{align}
+where $\Pi_2$ is the $2\pi$ phase space and the factor 1/2 comes
+from two identical pion propagators. More explicitly,
+\begin{align}
+	2\, \mathrm{Im} \mathcal{M}_{D^* \bar{D}^*} & = \frac{1}{2}
+	\int { \frac{d^3 q_1}{(2\pi)^3}\frac{1}{2\omega_1} \frac{d^3 q_2}{(2\pi)^3} \frac{1}{2\omega_2}
+	|\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2} (2\pi)^4 \delta^{(4)}(p_1 + p_2 - q_1 - q_2) \cr
+	& = \frac{1}{8} \frac{1}{(2\pi)^2} \int { \frac{d^3 q_1 d^3 q_2}{\omega_1 \omega_2}
+	|\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2 \delta^{(4)}(p_1 + p_2 - q_1 - q_2)} \cr
+	& = \frac{1}{8} \frac{1}{(2\pi)^2} \int {d^3 q \, \frac{1}{\sqrt{q^2 + m_\pi^2}} \frac{1}{\sqrt{(P+q)^2 + m_\pi^2}}
+	|\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2 \delta(E_1 + E_2 - \omega_q - \omega_q')}.
+\end{align}
+We will choose the center of mass frame. Since the total initial three-momentum $P$ is zero in the center of mass frame,
+the amplitude can be written as
+\begin{align}
+	2\, \mathrm{Im} \mathcal{M}_{D^* \bar{D}^*} & = \frac{1}{8} \frac{1}{(2\pi)^2} \int { \frac{d^3 q}{\omega_q^2}
+	|\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2 \delta(2E_p - 2 \sqrt{q^2 + m_\pi^2})} \cr
+	& = \frac{1}{8} \frac{1}{(2\pi)^2} \int {q^2dq\, d\Omega\, \frac{1}{\omega_q^2}
+	|\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2 \frac{1}{2} \delta(E_p - \sqrt{q^2 + m_\pi^2})}  \cr
+	& = \frac{1}{16} \frac{1}{(2\pi)^2} \int {dq\, \frac{q^2}{\omega_q^2} \delta(E_p - \sqrt{q^2 + m_\pi^2})}
+	\int {d\Omega \, |\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2}
+\end{align}
+The non-zero and positive point of the delta function exists at
+\begin{align}
+	q = \sqrt{E_p^2 - m_\pi^2} = \sqrt{\frac{t}{4} - m_\pi^2} = \frac{1}{2} \sqrt{t - 4m_\pi^2}.
+\end{align}
+We will use a property of the delta function
+\begin{align}
+	\delta (g(x)) = \sum{ \frac{\delta(x - \alpha_n)}{|g'(\alpha_n)|}},
+\end{align}
+then
+\begin{align}
+	\delta(E_p - \sqrt{q^2 + m_\pi^2}) =\left. \frac{\omega_q}{q}
+	\right|_{q = \frac{1}{2} \sqrt{t - 4m_\pi^2}}
+	\delta (q - \frac{1}{2} \sqrt{t - 4m_\pi^2}).
+\end{align}
+Therefore, we may write the imaginary part of the $D^* \bar{D}^*$ scattering amplitude.
+\begin{align} \label{eq79}
+	2\, \mathrm{Im} \mathcal{M}_{D^* \bar{D}^*} & = \left. \frac{1}{16} \frac{1}{(2\pi)^2}
+	\frac{q}{\omega_q} \right|_{q = \frac{1}{2} \sqrt{t - 4m_\pi^2}}
+	\int {d\Omega \, |\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2} \cr
+	& = \frac{1}{16} \frac{1}{(2\pi)^2} \frac{2}{\sqrt{t}} \frac{\sqrt{t - 4m_\pi^2}}{2}
+	\int {d\Omega \, |\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2} \cr
+	& = \frac{1}{64 \pi^2} \sqrt{\frac{t - 4m_\pi^2}{t}} \int {d\Omega \,
+	|\mathcal{M}_{{D^* \bar{D}^*} \rightarrow \pi\pi}|^2}
+\end{align}
+%------------------------------------------------------
+
+\subsection{Partial wave expansion}
+To obtain the state which has the angular momentum as good quantum number, we will expand amplitude partially.
+For the scalar channel, the amplitude has very simple structure, but for vector case this procedure might be
+somewhat complicated. The orbital angular momentum are also considered in LSJ system.
+Moreover, to construct Lorentz invariant states, the helicity basis or LSJ basis should be choosed for this
+calculations.
+Since the incoming and outgoing particles are free, we can write
+\begin{align}
+	|D^* \bar{D}^* \rangle = | p\,\phi'\,\theta'\lambda_1 \lambda_2 \rangle,
+\end{align}
+where $p$ is magnitude of momentum of $D^*(\bar{D}^*)$ meson and $\phi$ is polar angle and $\theta$ is azimuthal angle.
+$\lambda_1$ and $\lambda_2$ are helicity quantum numbers of initial particles. We may write the two-pion states in the same way.
+\begin{align}
+	|\pi \pi \rangle = | q\,\phi\,\theta,\lambda_3=0, \lambda_4=0 \rangle
+\end{align}
+States of the definite angular momentum can be constructed from
+\begin{align}
+	|J M \lambda_1 \lambda_2 \rangle = \sqrt{\frac{2J+1}{4\pi}} \int{d\Omega \, D^{J*}_{M \lambda} (\phi, \theta, 0))}
+	|\phi\,\theta \lambda_1 \lambda_2 \rangle,
+\end{align}
+where $\lambda = \lambda_1 - \lambda_2$. From this formula, we can connect two states.
+\begin{align}
+	\langle \phi\,\theta \lambda'_1 \lambda'_2 |J M \lambda_1 \lambda_2 \rangle &= \sqrt{\frac{2J+1}{4\pi}}
+	\int{d\Omega' \, D^{J*}_{M \lambda} (\phi', \theta', 0)}
+	\langle \phi\,\theta \lambda'_1 \lambda'_2 |\phi'\,\theta' \lambda_1 \lambda_2 \rangle \cr
+	&= \sqrt{\frac{2J+1}{4\pi}} \int{d\Omega' \, D^{J*}_{M \lambda} (\phi', \theta', 0)
+	\delta(\cos{\theta} - \cos{\theta'}) \delta(\phi - \phi')
+	\delta_{\lambda_1 \lambda'_1} \delta_{\lambda_2 \lambda'_2}} \cr
+	&= \sqrt{\frac{2J+1}{4\pi}} D^{J*}_{M \lambda} (\phi, \theta, 0)
+\end{align}
+\begin{align}
+	\langle JM\lambda_1\lambda_2|\phi\,\theta\lambda_1'\lambda_2'\rangle
+	&= \sqrt{\frac{2J+1}{4\pi}} \int d\Omega'\, D_{M\lambda}^J(\Omega')
+	\delta^{(2)}(\phi,\theta) \delta_{\lambda_1 \lambda_1'} \delta_{\lambda_2 \lambda_2'} \cr
+	&=  \sqrt{\frac{2J+1}{4\pi}} D_{M\lambda}^J(\Omega)
+\end{align}
+Using this relation, we can expand the partial wave amplitude as
+\begin{align}
+	\langle \phi_{p'}\,\theta_{p'}00| \mathcal{M} | \phi_q\,\theta_q\lambda_1 \lambda_2 \rangle &= \sum_{JM} \sum_{J'M'}
+	\langle \phi_{p'}\,\theta_{p'} 00 | J'M'00 \rangle \langle J'M'00 | \mathcal{M} | JM \lambda_1 \lambda_2 \rangle
+	\langle JM \lambda_1 \lambda_2 | \phi_q\,\theta_q, \lambda_1 \lambda_2 \rangle \cr
+	&= \sum_{JM} \sum_{J'M'} \sqrt{\frac{2J+1}{4\pi}} \sqrt{\frac{2J'+1}{4\pi}}
+	D^{J*}_{M' 0} (\phi_{p'}, \theta_{p'}, 0) D^{J}_{M \lambda} (\phi_q, \theta_q, 0)
+	\langle 00 | \mathcal{M}^J | \lambda_1 \lambda_2 \rangle \delta_{JJ'} \delta_{MM'} \cr
+	&= \sum_{JM} \frac{2J+1}{4\pi} D^{J*}_{M' 0} (\phi_{p'}, \theta_{p'}, 0) D^{J}_{M \lambda} (\phi_q, \theta_q, 0)
+	\langle 00 | \mathcal{M}^J | \lambda_1 \lambda_2 \rangle  \cr
+	&= \sum_{JM} \frac{2J+1}{4\pi} D^{J*}_{M' 0} (\phi_{p'}, \theta_{p'}, 0) D^{J}_{M \lambda} (\phi_q, \theta_q, 0)
+	\mathcal{M}^{J,\lambda_1 \lambda_2}
+\end{align}
+Therefore, we obtain
+\begin{align}
+	\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi \pi}^{\lambda_3 \lambda_4} &=
+	\sum_{J'M'} \frac{2J'+1}{4\pi} D^{J'*}_{M' \lambda'} (\phi_{p'}, \theta_{p'}, 0) D^{J'}_{M' 0} (\phi_q, \theta_q, 0)
+	\mathcal{M}_{D^* \bar{D}^*\rightarrow \pi\pi}^{J',\lambda_3 \lambda_4}
+\end{align}
+The azimuthal angle $\phi$ can be set arbitrary. We will choose $\phi=0$ for simplicity.
+\begin{align}
+	\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi \pi}^{\lambda_3 \lambda_4 \dagger} &=
+	\sum_{J'M'} \frac{2J'+1}{4\pi} d_{M' \lambda'}^{J'} (\cos{\theta_{p'}}) d_{M' 0}^{J'}(\cos{\theta_q})
+	\mathcal{M}_{D^* \bar{D}^*\rightarrow \pi\pi}^{J',\lambda_3 \lambda_4 \dagger}
+\end{align}
+where $\bar{\theta} = \theta_{p'} - \theta_{q}$. We expand the amplitudes
+\begin{align} \label{dstrpi_partial}
+	\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi \pi}^{\lambda_1 \lambda_2} &=
+	\sum_{JM} \frac{2J+1}{4\pi} d_{M0}^J(\cos{\theta_q}) d_{M\lambda}^J(\cos{\theta_p})
+	\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{J,\lambda_1 \lambda_2}.
+\end{align}
+In order to project out partial amplitude we multiply by $d_{\mu0}^j$ both sides.
+\begin{align}
+	2\pi \int_{-1}^{1} d(\cos{\theta_q})
+	\,\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{\lambda_1 \lambda_2}
+	d_{\mu0}^j(\cos{\theta_q})
+	&= \int_{-1}^{1} d\cos{\theta_q}\,\sum_{JM} \frac{2J+1}{2}
+	d_{\mu0}^j(\cos{\theta_q}) d_{M0}^J(\cos{\theta_q}) d_{M\lambda}^J(\cos{\theta_p})
+	\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{J,\lambda_1 \lambda_2} \cr
+	&= \mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{j,\lambda_1 \lambda_2}
+	d_{\mu\lambda}^j(\cos{\theta_{p'}})
+\end{align}
+We define partial wave amplitudes according to
+\begin{align}
+	\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{j,\lambda_1 \lambda_2}
+	d_{\mu\lambda}^j(\cos{\theta_{p'}})
+	= 2\pi \int_{-1}^{1} d(\cos{\theta_q})
+	\,\mathcal{M}_{D^* \bar{D}^* \rightarrow \pi\pi}^{\lambda_1 \lambda_2}
+	d_{\mu0}^j(\cos{\theta_q}).
+\end{align}
+We then may write the RHS of Eq.(\ref{eq79}) more explicitly. If we take into
+account unpolarized amplitudes and since we fixed $\phi_q=0$, we get
+\begin{align} \label{D*D*barpipi_combining}
+	\int d(\cos{\theta_q})\, \left|\mathcal{M}_{D^*\bar{D}^*\rightarrow\pi\pi}^{\mathrm{unpol}}\right|^2
+	= &\,\sum_{J,J'}\sum_{M,M'}\sum_{\lambda} \int d(\cos{\theta_q})
+	\frac{2J+1}{4\pi} \frac{2J'+1}{4\pi}
+	d_{M0}^J(\cos{\theta_q}) d_{M'0}^{J'}(\cos{\theta_q}) \cr
+	& \quad \times d_{M\lambda}^J(\cos{\theta_p}) d_{M'\lambda'}^{J'}(\cos{\theta_{p'}})
+	\mathcal{M}^{J',\lambda_3 \lambda_4 \dagger} \mathcal{M}^{J,\lambda_1 \lambda_2} \cr
+	= &\sum_{J,M,\lambda} \frac{2J+1}{4\pi} \frac{2J+1}{4\pi} \frac{2}{2J+1}
+	d_{M\lambda}^J(\cos{\theta_p}) d_{M\lambda'}^{J}(\cos{\theta_{p'}})
+	\mathcal{M}^{J,\lambda_3 \lambda_4 \dagger} \mathcal{M}^{J,\lambda_1 \lambda_2} \cr
+	= & \frac{1}{2\pi} \sum_{J,\lambda} \frac{2J+1}{4\pi} d_{\lambda' \lambda}^J(\cos{\theta})
+	\mathcal{M}^{J,\lambda_3 \lambda_4 \dagger} \mathcal{M}^{J,\lambda_1 \lambda_2},
+\end{align}
+where $\sum_{\lambda}$ describes sum of $\lambda_i$s.
+Now let us try to expand the $D^* \bar{D}^*$ amplitudes.
+\begin{align} \label{D*D*bar_expansion}
+	\mathcal{M}_{D^* \bar{D}^*}^{\mathrm{unpol}} = \sum_{\lambda}
+	\mathcal{M}_{D^* \bar{D}^*}^{\lambda_1 \lambda_2, \lambda_3 \lambda_4} &=
+	\sum_{J,\lambda} \frac{2J+1}{4\pi} d_{\lambda' \lambda}^J(\cos{\theta})
+	\mathcal{M}_{D^* \bar{D}^*}^{J,\lambda_1 \lambda_2, \lambda_3 \lambda_4}
+\end{align}
+%=========================================================================================================
+\subsection{Spectral function}
+Comparing Eq.(\ref{D*D*barpipi_combining}) with the imaginary part of
+Eq.(\ref{D*D*bar_expansion}), we derive
+\begin{align} \label{Cutkosky}
+	\mathrm{Im}\,\mathcal{M}_{D^*\bar{D}^*}^{J,\mathrm{unpol}}(t)
+	= \frac{1}{128\pi^2} \sqrt{\frac{t-4m_\pi^2}{t}} \sum_\lambda\times
+	\frac{1}{2\pi} \mathcal{M}^{J,\lambda_3 \lambda_4 \dagger}(t)
+	\mathcal{M}^{J,\lambda_1 \lambda_2}(t).
+\end{align}
+Since we are only interested in scalar channel, $J=0$ indicates the fact that
+$d^{J=0}$ restrict the helicity quantum numbers of $D^*$ and $\bar{D}^*$ mesons
+to $\lambda=\lambda' =0$ which means
+\begin{align} \label{helicity_restriction}
+	\lambda=\lambda_1-\lambda_2=0\ ; \quad \lambda'=\lambda_3-\lambda_4=0.
+\end{align}
+If we define the spectral function as the imaginary part of unpolarzed $D^*\bar{D^*}$
+amplitude
+\begin{align} \label{definition_spectralfunction}
+	\rho(t) \equiv \mathrm{Im}\,\mathcal{M}_{D^*\bar{D}^*}^\mathrm{unpol}
+	= \mathrm{Im}\sum_{\lambda}
+	\mathcal{M}_{D^*\bar{D}^*}^{J,\lambda_1\lambda_2,\lambda_3\lambda_4}(t),
+\end{align}
+finally we arrive at $D^*D^*$ S-channel amplitude via dispersion relation.
+\begin{align} \label{D^*D^*S_amplitude}
+	\mathcal{M}_{D^*D^*}^S = \int_{4m_\pi^2}^\infty
+	dt'\,\frac{\rho(t')}{t-t'}
+\end{align}
+%=========================================================================================================
+\section{selection rules}
+Let us consider the parity and G-parity conservation. We can easily construct
+selection rules from these symmetries. First up, In order to do that we have to
+know parity eigenvalues of two-particle states both of Helicity and LSJ bases.
+\begin{align} \label{parity_twopar_Hel}
+	\mathcal{P} |JM \lambda_1 \lambda_2 \rangle &= \mathcal{P}
+	\sqrt{\frac{2J+1}{4\pi}} \int d\Omega\, D^{J*}_{M\lambda} (\phi,\theta,0)
+	|\phi \theta \lambda_1 \lambda_2 \rangle \cr
+	&= \sqrt{\frac{2J+1}{4\pi}} \int \Omega\, D^{J*}_{M\lambda}  (\phi, \theta, 0)
+	\eta_1 \eta_2 e^{-i\pi S_1} e^{-i \pi S_2}
+	|\phi + \pi, \theta - \pi,-\lambda_1 {-\lambda_2} \rangle \cr
+	&= \sqrt{\frac{2J+1}{4\pi}} \int \Omega'\, e^{i\pi (J-S_1 -S_2)} D^{J*}_{M,{-\lambda}} (\Omega')
+	\eta_1 \eta_2 |\Omega',-\lambda_1 {-\lambda_2} \rangle \cr
+	&= \eta_1 \eta_2 (-1)^{J-S_1-S_2} |\Omega', -\lambda_1 {-\lambda_2} \rangle
+\end{align}
+and
+\begin{align} \label{parity_twopar_LSJ}
+	\mathcal{P} |JMLS \rangle &= \mathcal{P} \sum_{m m_S} \sum_{m_1 m_2}
+	(LmSm_S|JM)(S_1 m_1 S_2 m_2 | S m)
+	\int d\Omega\, Y_m^l (\Omega) |\Omega m_1 m_2 \rangle \cr
+	&= \sum_{m m_S} \sum_{m_1 m_2}
+	(LmSm_S|JM)(S_1 m_1 S_2 m_2 | S m)
+	\int d\Omega\, Y_m^l (\Omega)
+	\eta_1 \eta_2 |\Omega' m_1 m_2 \rangle \cr
+	&= \sum_{m m_S} \sum_{m_1 m_2}
+	(LmSm_S|JM)(S_1 m_1 S_2 m_2 | S m)
+	\int d\Omega'\, (-1)^l Y_m^l (\Omega')
+	\eta_1 \eta_2 |\Omega' m_1 m_2 \rangle  \cr
+	&= \eta_1 \eta_2 (-1)^l |JMLS \rangle
+\end{align}
+If we assume that transition operators are invariant under parity transformation,
+the matrix element of helicity amplitude can be reduced as
+\begin{align} \label{parity_sel_Hel}
+	\langle \lambda_3 \lambda_4 | \mathcal{M} | \lambda_1 \lambda_2 \rangle
+	= \eta \langle -\lambda_3 {-\lambda_4} | \mathcal{M} | -\lambda_1 {-\lambda_2} \rangle\ ;
+	\qquad
+	\eta \equiv \frac{\eta_1 \eta_2}{\eta_3 \eta_4} (-1)^{S_3+S_4-S_1-S_2}.
+\end{align}
+From the unitarity condition we may construct selection rules.
+Acting the parity and G-parity operation on
+$D^* \bar{D}^* \rightarrow \pi\pi$ amplitude, we have the rules as below.
+\begin{align} \label{parity_sel_LSJ}
+	(-1)^L = \eta_\pi \eta_\pi (-1)^{L_{\pi\pi}} = (-1)^{L_{\pi\pi}}
+\end{align}
+\begin{align} \label{gparity_sel_LSJ}
+	(-1)^{J+I} = G_\pi G_\pi = 1
+\end{align}
+We are now dealing with $J=0$ and $I=0$ channel.
+I listed all possible $\sigma$-channel transition in the Table \ref{tab:template}.
+Note that $S$ can be 0, 1, or 2.
+\begin{table}[H]
+\centering
+\begin{tabular}{c c c c c c c}
+\hline\hline
+ 	&	$J^P$	&	$I^G$	&	$L_{\pi\pi}$	&	$S_{\pi\pi}$	&	L	&	S \\
+\hline
+\multirow{2}*{$\sigma$}	&	\multirow{2}*{$0^+$}	&	\multirow{2}*{$0^+$}	&	0	&	0	&	0	&	0 	\\
+		&		&		&	0	&	0	&	2	&	2	\\
+\hline\hline
+\end{tabular}
+\caption{Allowed transitions of $\sigma$-channel} % Table caption, can be commented out if no caption is required
+\label{tab:template} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+%\section{Results}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{Spectral_WB_mono_2000_171031.pdf}
+%	\caption{The $DD$ sepctral function(Born + Correlated). A monopole form facor is used from $\Lambda=2000$ to $2400$}
+%	\label{spectral monoff}
+%\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{Spectral_WB_2000_171030.pdf}
+%	\caption{The $DD$ sepctral function(Born + Correlated). A $s$-channel form facor is used from $\Lambda=2000$ to $2400$}
+%	\label{spectral monoff}
+%\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{Spectral_WB_exp_2000_171031.pdf}
+%	\caption{The $DD$ sepctral function(Born + Correlated). A exponential form facor is used from $\Lambda=2000$ to $2400$}
+%	\label{spectral monoff}
+%\end{figure}
+\newpage
+\appendix
+\section{Explicit calculations}
+In this section I would like to show the explicit expressions of
+LSJ state in terms of the helicity states. It is convenient to
+express the LSJ amplitudes that use of a notation :
+\begin{align} \label{LSJ_DDpipi}
+	\langle L'S' | \mathcal{M}^J | LS \rangle_{\mathrm{LSJ}} \equiv \langle JML'S' | \mathcal{M}^J | JMLS \rangle
+\end{align}
+From Eq. (\ref{LSJ_to_Hel}) we have
+\begin{align} \label{0000LSJ}
+	|0000 \rangle_{LSJ} = \sum_{\lambda_1 \lambda_2}
+	(000\lambda|0\lambda)(1\lambda_1 1{-\lambda_2}|0\lambda)
+	|00\lambda_1 \lambda_2 \rangle
+	= \frac{1}{\sqrt{3}}\left(|11\rangle - |00\rangle |-1{-1}\rangle \right)
+\end{align}
+\begin{align} \label{0022LSJ}
+	|0022 \rangle_{LSJ} = \sum_{\lambda_1 \lambda_2}
+	(202\lambda|0\lambda)(1\lambda_1 1{-\lambda_2}|2\lambda)
+	|00\lambda_1 \lambda_2 \rangle
+	=\frac{1}{\sqrt{6}} \left(|11\rangle + 2|00\rangle + |-1{-1}\rangle \right)
+\end{align}
+Since $D^* \bar{D}^* \rightarrow \pi\pi$ transition only allows
+two LSJ amplitudes, four LSJ amplitudes can be taken account.
+\begin{align} \label{LSJs}
+	\langle 00 | \mathcal{M}^{J=0} | 00 \rangle_{LSJ}, \
+	\langle 00 | \mathcal{M}^{J=0} | 22 \rangle_{LSJ}, \
+	\langle 22 | \mathcal{M}^{J=0} | 00 \rangle_{LSJ}, \
+	\langle 22 | \mathcal{M}^{J=0} | 22 \rangle_{LSJ}.
+\end{align}\\
+i) Im$\langle00|\mathcal{M}^{J=0}|00\rangle_{LSJ}$
+\begin{align} \label{Im0000}
+	\mathrm{Im} \langle 00|\mathcal{M}|00\rangle_{LSJ}
+	&= \frac{1}{3} \mathrm{Im}
+	\Big(\langle 11| - \langle 00| + \langle -1{-1}|\Big) \mathcal{M}
+	\Big(|11\rangle - |00\rangle + |-1{-1}\rangle\Big) \cr
+	&= \frac{1}{128\pi^2} \sqrt{\frac{t-4m_\pi^2}{t}}
+	\frac{1}{3} \cr
+	&\quad\ \times \left(
+	\mathcal{M}^{00 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\mathcal{M}^{00}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	- 4 \mathcal{M}^{00 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\mathcal{M}^{11}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	+ 4 \mathcal{M}^{11 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	 \mathcal{M}^{11}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\right)
+\end{align}\\
+ii) Im$\langle00|\mathcal{M}^{J=0}|22\rangle_{LSJ}$
+\begin{align} \label{Im0022}
+	\mathrm{Im} \langle 00|\mathcal{M}|22\rangle_{LSJ}
+	&= \mathrm{Im} \left[ \frac{1}{\sqrt{3}}
+	\Big\{ \langle 11| - \langle 00| + \langle -1{-1}|\Big\} \right]
+	\mathcal{M} \left[ \frac{1}{\sqrt{6}}
+	\Big\{ |11\rangle + 2|00\rangle +|-1{-1}\rangle \Big\} \right] \cr
+	&= \frac{1}{128\pi^2} \sqrt{\frac{t-4m_\pi^2}{t}} \frac{1}{3\sqrt{2}}\left(
+	-2 \mathcal{M}^{00 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\mathcal{M}^{00}_{D^* \bar{D}^* \rightarrow \pi\pi} \right. \cr
+	&\qquad\qquad\qquad\left.
+	+\, 2 \mathcal{M}^{00 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\mathcal{M}^{11}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	+4 \mathcal{M}^{11 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	 \mathcal{M}^{11}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\right)
+\end{align}\\
+iii) Im$\langle22|\mathcal{M}^{J=0}|22\rangle_{LSJ}$
+\begin{align} \label{Im2222}
+	\mathrm{Im} \langle 22|\mathcal{M}|22\rangle_{LSJ}
+	&= \frac{1}{6} \mathrm{Im}
+	\Big\{ \langle 11| +2 \langle 00| + \langle -1{-1}|\Big\}
+	\mathcal{M} \Big\{ |11\rangle + 2|00\rangle +|-1{-1}\rangle \Big\} \cr
+	&= \frac{1}{128\pi^2} \sqrt{\frac{t-4m_\pi^2}{t}} \frac{2}{3}\left(
+	\mathcal{M}^{00 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\mathcal{M}^{00}_{D^* \bar{D}^* \rightarrow \pi\pi} \right. \cr
+	&\qquad\qquad\qquad\left.
+	+\, 2 \mathcal{M}^{00 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\mathcal{M}^{11}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	+ \mathcal{M}^{11 \dagger}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	 \mathcal{M}^{11}_{D^* \bar{D}^* \rightarrow \pi\pi}
+	\right)
+\end{align}\\
+
+\section{Vertex Feynman rules}
+From the effective Lagrangians, Eq.(\ref{Lagrangian}) and Eq.(\ref{Lagrangian_D*}), we derive the vertex Feynman rules. We might read the pion field as
+\begin{align*}
+	\phi_\pi = \int{\frac{d^3 k}{(2\pi)^3}
+	\frac{1}{\sqrt{2 \omega_k}}\left\{a_\mathbf{k}^\dagger e^{ik x} + a_\mathbf{k} e^{-ikx}\right\}}.
+\end{align*}
+If the pion is created at vertex :
+\begin{align*}
+	\partial^\mu \phi_\pi | \pi \rangle = &\int{\frac{d^3 k}{(2\pi)^3}
+	\frac{1}{\sqrt{2\omega_\mathbf{k}}}\left\{(ik^\mu)a_\mathbf{k}^\dagger e^{ik x} + (-ik^\mu)a_\mathbf{k} e^{-ikx}\right\}} \sqrt{2\omega_q}
+	a_\mathbf{q}^\dagger|0\rangle \cr
+	=&\int{\frac{d^3 k}{(2\pi)^3}
+	\sqrt{\frac{\omega_\mathbf{q}}{\omega_\mathbf{k}}}(-ik^\mu) a_\mathbf{k}  a_\mathbf{q}^\dagger e^{-ikx}}|0\rangle \cr
+	=& \int{\frac{d^3 k}{(2\pi)^3}
+	\sqrt{\frac{\omega_\mathbf{q}}{\omega_\mathbf{k}}} (-ik^\mu)[a_\mathbf{k},  a_\mathbf{q}^\dagger] e^{-ikx}}|0\rangle \cr
+	=& \int{\frac{d^3 k}{(2\pi)^3}
+	\sqrt{\frac{\omega_\mathbf{q}}{\omega_\mathbf{k}}}(-ik^\mu) (2\pi)^3 \delta^{(3)} (\vec{k} - \vec{q}) e^{-ikx}}|0\rangle \cr
+	=&(-iq^\mu) e^{-iqx} |0\rangle
+\end{align*}
+If the pion is annihilated at vertex :
+\begin{align*}
+	\langle \pi | \partial^\mu \phi_\pi = \langle 0| (iq^\mu) e^{iqx}
+\end{align*}
+This is applied to $D^*D^*\pi$ vertex. The $D^*$ field is given as
+\begin{align*}
+	D_\alpha^{*(\lambda)} &= \int{\frac{d^3 p}{(2\pi)^3}
+	\frac{1}{\sqrt{2 E_p}}\left\{ a_\mathbf{p}^{\lambda \dagger} \epsilon_\alpha^{*(\lambda)}(\mathbf{p})e^{ipx}
+	+ b_\mathbf{p}^\lambda \epsilon_\alpha^{(\lambda)}(\mathbf{p}) e^{-ipx}  \right\}},\\
+	\partial_\nu D_\alpha^{*(\lambda)} &= \int{\frac{d^3 p}{(2\pi)^3}
+	\frac{1}{\sqrt{2 E_p}}\left\{ (ip_\nu) a_\mathbf{p}^{\lambda \dagger} \epsilon_\alpha^{*(\lambda)}(\mathbf{p})e^{ipx}
+	+ (-ip_\nu)b_\mathbf{p}^\lambda \epsilon_\alpha^{(\lambda)}(\mathbf{p}) e^{-ipx}  \right\}}.
+\end{align*}
+If $D^*$ is created at vertex :
+\begin{align*}
+	D_\alpha^{*(\lambda')} |D^*, \lambda \rangle = \int{\frac{d^3 p'}{(2\pi)^3}
+	\frac{1}{\sqrt{2 E_{p'}}} a_\mathbf{p'}^{\lambda'} \epsilon_\alpha^{(\lambda')}(\mathbf{p'}) e^{-ip'x}} \sqrt{2 E_p}
+	a_\mathbf{p}^{\lambda \dagger} |0\rangle
+	&= \int{\frac{d^3 p'}{(2\pi)^3} \sqrt{\frac{E_{p'}}{E_p}} \epsilon_\alpha^{(\lambda')} (\mathbf{p'})
+	a_\mathbf{p'}^{\lambda'} a_\mathbf{p}^{\lambda \dagger} } e^{-ip'x}|0\rangle \cr
+	&= \int{\frac{d^3 p'}{(2\pi)^3} \sqrt{\frac{E_{p'}}{E_p}} \epsilon_\alpha^{(\lambda')} (\mathbf{p'})
+	a_\mathbf{p'}^{\lambda'} a_\mathbf{p}^{\lambda \dagger} } e^{-ip'x}|0\rangle \cr
+	&= \int{\frac{d^3 p'}{(2\pi)^3} \sqrt{\frac{E_{p'}}{E_p}} \epsilon_\alpha^{(\lambda')} (\mathbf{p'})
+	(2\pi)^3 \delta^{(3)} (\mathbf{p}-\mathbf{p}') \delta_{\lambda \lambda'}} e^{-ip'x}|0\rangle \cr
+	&= \epsilon_\alpha^{(\lambda)}(\mathbf{p}) e^{-ipx} |0\rangle .
+\end{align*}
+If $D^*$ is annihilated at vertex :
+\begin{align*}
+	\langle D^*, \lambda | D_\alpha^{*(\lambda')} &= \langle 0 | \sqrt{2E_p} a_\mathbf{p}^\lambda
+	\int{\frac{d^3 p'}{(2\pi)^3}} \frac{1}{\sqrt{2E_{p'}}} a_{\mathbf{p}'}^{\lambda' \dagger}
+	\epsilon_\alpha^{*(\lambda')} (\mathbf{p}') e^{ip'x} \cr
+	&= \langle 0 | \int{\frac{d^3 p'}{(2\pi)^3}} \sqrt{\frac{E_p}{E_{p'}}}
+	\epsilon_\alpha^{*(\lambda')} (\mathbf{p}') a_\mathbf{p}^\lambda a_{\mathbf{p}'}^{\lambda' \dagger} e^{ip'x} \cr
+	&= \langle 0 | \int{\frac{d^3 p'}{(2\pi)^3}} \sqrt{\frac{E_p}{E_{p'}}}
+	\epsilon_\alpha^{*(\lambda')} (\mathbf{p}') (2\pi)^3 \delta^{(3)}(\mathbf{p} - \mathbf{p'}) e^{ip'x} \cr
+	&= \langle 0 | \epsilon_\alpha^{*(\lambda)} (\mathbf{p}) e^{ipx}
+\end{align*}
+Vector propagator :
+\begin{align}
+	\langle 0 | D_\alpha^* D_\beta^*| 0 \rangle = \frac{-i\left(g_{\alpha \beta} -
+	\frac{q_\alpha q_\beta}{m^2}\right)}{q^2 - m^2}
+\end{align}
+Let us consider the antiparticle fields.
+
+\section{Isospin algebra}
+\subsection{Projection operator}
+The $D$ and $D^*$ mesons are isodoublet. The isospin pauli matrices are given as
+\begin{align}
+	\tau_x = \left(\begin{array}{cc}
+	0 & 1 \\
+	1 & 0
+	\end{array} \right), \quad
+	\tau_y = \left(\begin{array}{cc}
+	0 & i \\
+	-i & 0
+	\end{array} \right) \quad
+	\tau_z = \left(\begin{array}{cc}
+	1 & 0 \\
+	0 & -1
+	\end{array} \right)
+\end{align}
+We can easily show that they satisfy
+%\begin{align}
+%	\bm{\tau}^2 = \left(\begin{array}{cc}
+%	1 & 0 \\
+%	0 & 1
+%	\end{array} \right) = 1
+%\end{align}
+\begin{align}
+	\left\{ \tau_i,\tau_j \right\} = 2\delta_{ij},\quad
+	\left[ \tau_i, \tau_j \right] = 2 i \varepsilon_{ijk} \tau_k,\quad
+	\bm{\tau}^2 = 1.
+\end{align}
+The eigenvalue of $\bm{\tau}^2$ is
+\begin{align}
+	\tau^2 |T=1/2,T_z\rangle = 4T(T+1)|T=1/2,T_z\rangle = 3|T=1/2,T_z\rangle
+\end{align}
+The two isospin projection operator which describe two particles have 0 or 1 total isospin quantum numbers.
+If $\bm{\tau}_1$ and $\bm{\tau}_2$ being projection operators of particle 1 and 2, the total isospin operator is
+\begin{align}
+	\bm{I} = \frac{1}{2} \left( \bm{\tau}_1 + \bm{\tau}_2 \right)
+\end{align}
+So that
+\begin{align}
+	\bm{I}^2 = \frac{1}{4} \left(6 + 2\bm{\tau}_1 \cdot \bm{\tau}_2 \right) = \frac{3}{2} + \frac{1}{2}\bm{\tau}_1 \cdot \bm{\tau}_2 .
+\end{align}
+For $T=0$, the operator $\bm{\tau}_1 \cdot \bm{\tau}_2$ has the following eigenvalue.
+\begin{align}
+	\bm{\tau}_1 \cdot \bm{\tau}_2 = -3
+\end{align}
+In case of $T=1$,
+\begin{align}
+	\bm{\tau}_1 \cdot \bm{\tau}_2 = 1
+\end{align}
+We thus may construct isospin projection operators as
+\begin{align}
+	P^0 = \frac{1}{4} - \frac{1}{4}\bm{\tau}_1 \cdot \bm{\tau}_2,\quad
+	P_1 = \frac{3}{4} + \frac{1}{4}\bm{\tau}_1 \cdot \bm{\tau}_2
+\end{align}
+%
+\subsection{$\pi\pi$ system}
+The pion can be represented in cartesian coorinates as
+\begin{align} \label{cartesian pion}
+	|\pi_x\rangle = \left( \begin{array}{c c c} 1 \\ 0 \\ 0 \end{array} \right), \quad
+	|\pi_y\rangle = \left( \begin{array}{c c c} 0 \\ 1 \\ 0 \end{array} \right), \quad
+	|\pi_z\rangle = \left( \begin{array}{c c c} 0 \\ 0 \\ 1 \end{array} \right)
+\end{align}
+or in spherical coordinates
+\begin{align}
+	&|\pi^+\rangle = -\frac{1}{\sqrt{2}} (|\pi_x\rangle + i |\pi_y\rangle) = |1,1\rangle\\
+	&|\pi^0\rangle = |\pi_z\rangle = |1,0\rangle\\
+	&|\pi^-\rangle = \frac{1}{\sqrt{2}} (|\pi_x\rangle - i |\pi_y\rangle) = |1,-1\rangle.
+\end{align}
+It is easy to show that they are indeed the eigenstates of rotation matrices. As we did for spin operators in Quantum
+mechanics, we may construct two pion states which has eigenvalues $T=0$ and $T=1$. For $T=0$
+\begin{align}
+	|0,0\rangle = \frac{1}{\sqrt{3}} |1,1\rangle |1,-1\rangle - \frac{1}{\sqrt{3}} |1,0\rangle + \frac{1}{\sqrt{3}} |1,-1\rangle.
+\end{align}
+and for $T=1$
+\begin{align}
+	|1,1\rangle = \frac{1}{\sqrt{2}} |1,1\rangle |1,0\rangle - \frac{1}{\sqrt{2}} |1,0\rangle |1,1\rangle
+\end{align}
+\begin{align}
+	|1,0\rangle = \frac{1}{\sqrt{2}} |1,1\rangle |1,-1\rangle - \frac{1}{\sqrt{2}} |1,-1\rangle |1,1\rangle
+\end{align}
+\begin{align}
+	|1,-1\rangle = \frac{1}{\sqrt{2}} |1,0\rangle |1,-1\rangle - \frac{1}{\sqrt{2}} |1,-1\rangle |1,0\rangle
+\end{align}
+They also can be expressed in terms of Eq.(\ref{cartesian pion}).
+\begin{align}
+	|0,0\rangle_{\pi\pi} = -\frac{1}{\sqrt{3}} \sum_{i=1}^3 |\pi_i\rangle |\pi_i\rangle
+	= -\frac{1}{\sqrt{3}} \left(|\pi_1\rangle |\pi_1\rangle + |\pi_2\rangle |\pi_2\rangle
+	+|\pi_3\rangle |\pi_3\rangle \right)
+\end{align}
+\begin{align}
+	|1,1\rangle_{\pi\pi} = \frac{1}{2} \left(-|\pi_1\rangle |\pi_3\rangle + |\pi_3\rangle |\pi_1\rangle
+	-i|\pi_2\rangle |\pi_3\rangle +i|\pi_3\rangle |\pi_2\rangle  \right)
+\end{align}
+\begin{align}
+	|1,0\rangle_{\pi\pi} = \frac{i}{\sqrt{2}} \left( |\pi_1\rangle |\pi_2\rangle
+	-|\pi_2\rangle |\pi_1\rangle\right)
+\end{align}
+\begin{align}
+	|1,-1\rangle_{\pi\pi} = \frac{1}{2} \left(-|\pi_1\rangle |\pi_3\rangle + |\pi_3\rangle |\pi_1\rangle
+	+i|\pi_3\rangle |\pi_2 -i|\pi_2\rangle |\pi_3\rangle \right)
+\end{align}
+(T=2 case)
+%
+\subsection{$D\bar{D}$ system}
+\begin{align}
+	|1/2,1/2\rangle_{D} \equiv \chi_{\frac{1}{2}} =
+	\left( \begin{array}{c} 1\\0 \end{array} \right),\quad
+	|1/2,{-1}/2\rangle_D \equiv \chi_{-\frac{1}{2}} =
+	\left( \begin{array}{c} 0\\1 \end{array} \right).
+\end{align}
+Let us consider $G$-parity operator for consideration of anti-isospinor $\tilde{\chi}_m$.
+The $G$ operation can be achieved by rotating $180^{\circ}$ along the $y-$direction in isotopic space and
+acting the charge conjugation operator.
+\begin{align}
+	G = C \exp\left(-i\pi\frac{\tau_y}{2}\right)
+\end{align}
+We see that
+\begin{align}
+	\exp\left(-i\pi\frac{\tau_y}{2}\right) = \cos{\frac{\pi}{2}}+i\tau_2\sin{\frac{\pi}{2}} = i\tau_2 =
+	\left( \begin{array}{cc} 0&1\\-1&0 \end{array} \right).
+\end{align}
+\begin{align}
+	|1/2,1/2\rangle_{\bar{D}} = \tilde{\chi}_{\frac{1}{2}} = G \chi_{\frac{1}{2}} = \left( \begin{array}{cc} 0&1\\-1&0 \end{array} \right)
+	\left( \begin{array}{c} 1\\0 \end{array} \right) = \left( \begin{array}{c} 0\\-1 \end{array} \right) = -\chi_{-\frac{1}{2}}
+\end{align}
+\begin{align}
+	|1/2,-1/2\rangle_{\bar{D}} = \tilde{\chi}_{-\frac{1}{2}} = G \chi_{-\frac{1}{2}} = \left( \begin{array}{cc} 0&1\\-1&0 \end{array} \right)
+	\left( \begin{array}{c} 0\\1 \end{array} \right) = \left( \begin{array}{c} 1\\0 \end{array} \right) = \chi_{\frac{1}{2}},
+\end{align}
+Thus we get
+\begin{align}
+	\tilde{\chi}_m = (-1)^{m+\frac{1}{2}} \chi_{-m}.
+\end{align}
+Now we may describe $D\bar{D}$ system for $I=0$ by means of $\chi$ and $\tilde{\chi}$.
+\begin{align}
+	|0,0\rangle_{D\bar{D}} = \frac{1}{\sqrt{2}} \left(\chi_{\frac{1}{2}} \tilde{\chi}_{-\frac{1}{2}} -
+	\chi_{-\frac{1}{2}} \tilde{\chi}_{\frac{1}{2}} \right)
+	= \frac{1}{\sqrt{2}} \left(\chi_{\frac{1}{2}}\chi_{\frac{1}{2}} + \chi_{-\frac{1}{2}}\chi_{-\frac{1}{2}} \right).
+\end{align}
+and for $I=1$
+\begin{align}
+	|1,1\rangle_{D\bar{D}} = \chi_{\frac{1}{2}} \tilde{\chi}_{\frac{1}{2}} = -\chi_{\frac{1}{2}}\chi_{\frac{1}{2}}
+\end{align}
+\begin{align}
+	|1,0\rangle_{D\bar{D}} = \frac{1}{\sqrt{2}} \left(\chi_{\frac{1}{2}} \tilde{\chi}_{-\frac{1}{2}} +
+	\chi_{-\frac{1}{2}} \tilde{\chi}_{\frac{1}{2}} \right)
+	= \frac{1}{\sqrt{2}} \left(\chi_{\frac{1}{2}}\chi_{\frac{1}{2}} - \chi_{-\frac{1}{2}}\chi_{-\frac{1}{2}} \right)
+\end{align}
+\begin{align}
+	|1,-1\rangle_{D\bar{D}} = \chi_{-\frac{1}{2}} \tilde{\chi}_{-\frac{1}{2}} = \chi_{-\frac{1}{2}}\chi_{-\frac{1}{2}}
+\end{align}
+%
+\subsection{Projection operator}
+The amplitudude operator can be decomposed into two parts :
+\begin{align}
+	\mathcal{M}_{\alpha \beta} = \mathcal{M}^{(+)}\delta_{\alpha \beta} + \mathcal{M}^{(-)} \frac{1}{2} [\tau_\alpha,\tau_\beta].
+\end{align}
+Since we are dealing with $D\bar{D}$ and $\pi\pi$ systems as
+A matrix element of $\mathcal{M}$ can be obtained by sandwitching
+\begin{align}
+	\mathcal{M}^{I=0} &= {}_{\pi\pi}\langle 0,0| \mathcal{M} | 0,0 \rangle_{D\bar{D}} \cr
+	&= -\frac{1}{\sqrt{3}} \left(\langle\pi_1| \langle\pi_1| + \langle\pi_2| \langle\pi_2|
+	+\langle\pi_3| \langle\pi_3| \right)
+	\left(\mathcal{M}^{(+)}\delta_{\alpha \beta} + \mathcal{M}^{(-)} \frac{1}{2} [\tau_\alpha,\tau_\beta]\right)
+	\frac{1}{\sqrt{2}} \left(\chi_{\frac{1}{2}}\chi_{\frac{1}{2}} + \chi_{-\frac{1}{2}}\chi_{-\frac{1}{2}} \right) \cr
+	&= -\frac{1}{\sqrt{6}} \times 3 \left(\chi_{\frac{1}{2}} \mathcal{M}^{(+)} \chi_{\frac{1}{2}}
+	+\chi_{-\frac{1}{2}} \mathcal{M}^{(+)} \chi_{-\frac{1}{2}} \right) \cr
+	&= -\sqrt{6} \mathcal{M}^{(+)}
+\end{align}
+\begin{align}
+	\mathcal{M}^{I=1} &= {}_{\pi\pi}\langle 1,0|\mathcal{M} | 1,0 \rangle_{D\bar{D}} \cr
+	&= \frac{i}{\sqrt{2}} \left( \langle\pi_1| \langle\pi_2| -\langle\pi_2| \langle\pi_1|\right)
+	\left(\mathcal{M}^{(+)}\delta_{\alpha \beta} + \mathcal{M}^{(-)} \frac{1}{2} [\tau_\alpha,\tau_\beta]\right)
+	\frac{1}{\sqrt{2}} \left(\chi_{\frac{1}{2}}\chi_{\frac{1}{2}} - \chi_{-\frac{1}{2}}\chi_{-\frac{1}{2}} \right) \cr
+	&= \frac{i}{4} \mathcal{M}^{(-)} \left(\chi_{\frac{1}{2}}^\dagger \left\{[\tau_1,\tau_2]-[\tau_2,\tau_1]\right\}\chi_{\frac{1}{2}} +
+	\chi_{-\frac{1}{2}}^\dagger \left\{[\tau_1,\tau_2]-[\tau_2,\tau_1]\right\} \chi_{-\frac{1}{2}}   \right) \cr
+	&= \frac{i}{2} \mathcal{M}^{(-)} \left(\chi_{\frac{1}{2}}^\dagger [\tau_1,\tau_2]\chi_{\frac{1}{2}} +
+	\chi_{-\frac{1}{2}}^\dagger [\tau_1,\tau_2] \chi_{-\frac{1}{2}}   \right)\cr
+	&= \frac{i}{2} \mathcal{M}^{(-)} \left\{\chi_{\frac{1}{2}}^\dagger (2i\tau_3)\chi_{\frac{1}{2}} +
+	\chi_{-\frac{1}{2}}^\dagger (-2i\tau_3) \chi_{-\frac{1}{2}}   \right\} \cr
+	&= -2\mathcal{M}^{(-)}.
+\end{align}
+\begin{align}
+	{}_{\pi\pi}\langle 1,1|\mathcal{M} | 1,1 \rangle_{D\bar{D}}
+\end{align}
+\begin{align}
+	{}_{\pi\pi}\langle 1,-1|\mathcal{M} | 1,-1 \rangle_{D\bar{D}}
+\end{align}
+
+
+\end{document}
